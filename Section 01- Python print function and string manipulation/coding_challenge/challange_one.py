@@ -1,4 +1,4 @@
-# Challenge Instructions 
+# Challenge Instruction 
 
 # challenge 1 : Print your name to the console 
 # challenge 2 : Print the sentence I would be the best python programmer and i would be so good at it !
