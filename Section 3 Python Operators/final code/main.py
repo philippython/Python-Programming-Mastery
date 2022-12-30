@@ -132,37 +132,27 @@ available_bullets = 12
 # else:
 #     print("Loan is repaid")
 
+# grader
+#  70 -> A
+#  60 -> B
+#  50 -> C
+#  < 50 -> D
 
-score = 64 
+score = int(input("what is your score"))
 
 if score >= 70 :
-    print("Grade A")
-elif score >= 60 : 
-    print("Grade B")
+    print("GRADE A")
+elif score >= 60 :
+    print("GRADE B ")
 elif score >= 50 :
-    print("Grade C")
+    print("GRADE C") 
 else:
-    print("Grade D")
-
-    
+    print("GRADE D")
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# logical operator
+age = 18 
 
 
 
