@@ -138,21 +138,52 @@ available_bullets = 12
 #  50 -> C
 #  < 50 -> D
 
-score = int(input("what is your score"))
+# score = int(input("what is your score"))
 
-if score >= 70 :
-    print("GRADE A")
-elif score >= 60 :
-    print("GRADE B ")
-elif score >= 50 :
-    print("GRADE C") 
-else:
-    print("GRADE D")
-
-
+# if score >= 70 :
+#     print("GRADE A")
+# elif score >= 60 :
+#     print("GRADE B ")
+# elif score >= 50 :
+#     print("GRADE C") 
+# else:
+#     print("GRADE D")
 
 # logical operator
-age = 18 
+# and , or and not
+
+#  Toilet management system 
+# age = int(input("How old are you ? "))
+# gender = input("Are you a male or female ? ")
+
+
+# conditional statement
+# if age >= 18 and gender == "male" :
+#     print("Access granted into male club toilet")
+# elif age >= 18 and gender == "female" : 
+#     print("Access granted into female club toilet")
+# elif age < 18 or gender == "female" : 
+#     print("Public female toilet outside the club")
+# elif age < 18 or gender == "male" :
+#     print("Public male toilet outside the club")
+
+# inverse a boolean True and False
+# not True - > False
+#  not False -> True
+
+print(not False)
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
