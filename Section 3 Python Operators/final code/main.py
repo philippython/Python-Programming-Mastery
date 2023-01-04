@@ -235,28 +235,39 @@ available_bullets = 12
 #     print("Invalid match status")
 
 # minutes to hours converter
-minutes = float(input("How many minutes would you like to convert to hours"))
+# minutes = float(input("How many minutes would you like to convert to hours"))
 
 # floor divide 
-hours = minutes // 60 # 372.5 // 60 = 6.325
-mins = minutes % 60 # 372.5 / 60 372.5 / 60 = 6
+# hours = minutes // 60  372.5 // 60 = 6.325
+# mins = minutes % 60 # 372.5 / 60 372.5 / 60 = 6
 # 60 * 6 = 360 12.5 
 
 
-response = f"{hours}hrs {mins}mins"
-print(response)
+# response = f"{hours}hrs {mins}mins"
+# print(response)
 # float datatype
 # 360mins -> 6 hrs
 # 372.5 mins -> 6 hrs ...mins
 # 6 hrs 30mins 
 
+salary = "000"
+
+# shorthand if statement 
+
+# if 5000 == "5000" : 
+#     print("salary is high")
+# else: 
+#     print("5000 as an integer is not equal to 5000 as a string")
 
 
+# shorthand if...else statement
+# do this if condition is true else do something else
+print("salary is poor ") if salary == "5000" else print("salary is high")
 
-
-
-
-
+# if salary == "5000":
+#     print("salary is poor")
+# else :
+#     print("salary is high")
 
 
 
