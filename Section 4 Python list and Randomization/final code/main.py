@@ -49,19 +49,125 @@ import string
 # print(first_item)
 # indexing 
 
-programming_lngs = ["Java", "C++", "Javascript", "Python", "C", "C#"] # [0, 1 , 2, 3, 4, 5] 6 - 1
-first_item = programming_lngs[0] 
-fourth_item = programming_lngs[3]
-print(first_item)
-print(fourth_item)
+# programming_lngs = ["Java", "C++", "Javascript", "Python", "C", "C#"] # [0, 1 , 2, 3, 4, 5] 6 - 1
+# first_item = programming_lngs[0] 
+# fourth_item = programming_lngs[3]
+# print(first_item)
+# print(fourth_item)
 
 # position on list - 1 
 #  firstpostion = 1   sixthposition = 6
 # 1- 1 = 0   6 -1 = 5
 # len function
-total_lngs = len(programming_lngs)
-print(total_lngs)
+# total_lngs = len(programming_lngs)
+# print(total_lngs)
 
-# indexerror
-item  = programming_lngs[10]
-print(item)
+# # indexerror
+# item  = programming_lngs[10]
+# print(item)
+
+sequence = [True, "John", [56, 78], "chris" , [True, ["shadrach", "John",78] , 90.66]]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# cart = ["Macbook", "airpod", "toilet paper", "baking powder"]
+# sub_cart = ["monitor", "keyboard"]
+# scores = [50, 66, 3, 6, 32]
+
+# scores.sort()
+# print(scores)
+# dir function 
+# list_operations = dir(cart)
+# print(list_operations)
+
+# append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort'
+# cart.append("oven")
+# cart.append("baking powder")
+# cart.append(sub_cart)
+
+# cart.extend(sub_cart)
+# cart.insert(0, "rice")
+
+# ['rice', 'Macbook', 'airpod', 'toilet paper', 'baking powder', 'oven', 'baking powder', 'monitor', 'keyboard']
+# cart.pop(4)
+# cart.remove("toilet tissue")
+# cart.reverse()
+# cart.sort()
+# print(cart)
+
+
+
+
+
+# index = cart.index("keyboard")
+# print(index)
+# print(cart[7])
+
+
+
+
+
+
+
+# cart.clear()
+
+# shallow_cart = cart.copy()
+# print(shallow_cart)
+# total_items = len(cart)
+# no_of_items = cart.count("baking powder")
+# print(total_items)
+# print(no_of_items)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
