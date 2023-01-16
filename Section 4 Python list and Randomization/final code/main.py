@@ -66,47 +66,17 @@ import string
 # item  = programming_lngs[10]
 # print(item)
 
-sequence = [True, "John", [56, 78], "chris" , [True, ["shadrach", "John",78] , 90.66]]
+# sequence = [True, "John", [56, 78], "chris" , [True, ["shadrach", "John",78] , 90.66]]
 
 
+# last_item = sequence[-1]
+# nested_item = last_item[1]
+# last_item_of_nested_list = nested_item[-1]
+# print(last_item)
+# print(nested_item)
+# print(last_item_of_nested_list)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# print(sequence[-1][1][-1])
 
 # cart = ["Macbook", "airpod", "toilet paper", "baking powder"]
 # sub_cart = ["monitor", "keyboard"]
@@ -156,8 +126,57 @@ sequence = [True, "John", [56, 78], "chris" , [True, ["shadrach", "John",78] , 9
 # print(total_items)
 # print(no_of_items)
 
+careers = ["Frontend developer", "Backend Developer"]
+name = "philip" # ['p', 'h', 'i', 'l' , 'i' , 'p']
+language = "ENGLISH"
+names = "philip|shadrach|tobias|chris|john"
+
+# split function 
+splitted_names = names.split("|")
+print(splitted_names)
+# # upper function
+# upper_name = name.upper()
+# print(upper_name)
+
+# # lower function
+# lower_language = language.lower()
+# print(lower_language)
+
+# title_name = name.title()
+# print(title_name)
+# modified_name = name.replace("p", "f")
+# print(modified_name)
+# index = name.index("p")
+# print(index)
 
 
+# functions_of_list = dir(careers)
+# print(functions_of_list)
+
+# fumctions_of_string = dir(name)
+# print(fumctions_of_string)
+
+# capitalize, count, endswith, startswith, index, replace , title, upper ,lower, split, islower, isupper
+# if name.endswith("k"): # True or False:
+#     print("Name ends with charcter k")
+# else:
+#     print("Name does not end with charcter k")
+
+
+
+
+
+
+
+
+
+
+
+# capitalizzed_name = name.capitalize()
+# print(capitalizzed_name)
+
+# char_count = name.count("p")
+# print(char_count)
 
 
 
