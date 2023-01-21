@@ -55,6 +55,12 @@ import string
 # print(first_item)
 # print(fourth_item)
 
+# C_sharp = programming_lngs[-1]
+# print(C_sharp)
+
+# programming_lngs[-1] = ".NET"
+
+# print(programming_lngs)
 # position on list - 1 
 #  firstpostion = 1   sixthposition = 6
 # 1- 1 = 0   6 -1 = 5
@@ -104,17 +110,9 @@ import string
 # print(cart)
 
 
-
-
-
 # index = cart.index("keyboard")
 # print(index)
 # print(cart[7])
-
-
-
-
-
 
 
 # cart.clear()
@@ -126,14 +124,14 @@ import string
 # print(total_items)
 # print(no_of_items)
 
-careers = ["Frontend developer", "Backend Developer"]
-name = "philip" # ['p', 'h', 'i', 'l' , 'i' , 'p']
-language = "ENGLISH"
-names = "philip|shadrach|tobias|chris|john"
+# careers = ["Frontend developer", "Backend Developer"]
+# name = "philip" # ['p', 'h', 'i', 'l' , 'i' , 'p']
+# language = "ENGLISH"
+# names = "philip|shadrach|tobias|chris|john"
 
 # split function 
-splitted_names = names.split("|")
-print(splitted_names)
+# splitted_names = names.split("|")
+# print(splitted_names)
 # # upper function
 # upper_name = name.upper()
 # print(upper_name)
@@ -161,32 +159,47 @@ print(splitted_names)
 #     print("Name ends with charcter k")
 # else:
 #     print("Name does not end with charcter k")
-
-
-
-
-
-
-
-
-
-
-
 # capitalizzed_name = name.capitalize()
 # print(capitalizzed_name)
 
 # char_count = name.count("p")
 # print(char_count)
 
+# countries_in_europe = ["Poland", "United Kingdom" ,"Wales", "Ireland", "Greece", "Germnay", "France" ] 
+# if "O" in fullname:
+#     print("Name contains char O")
+# else:
+#     print("Name does not contain character O")
+
+# country = input("Name of country: ")
 
 
+# if country not in countries_in_europe :
+#     print("country is not an european country")
+# else:
+#     print("country is an european country")
 
 
+#  memebership operator
+# not in , in 
 
+# if country in countries_in_europe :
+#     print(f"{country} is an european country")
+# else:
+#     print(f"{country} is not an european country")
 
+# import random
 
+# print("Welcome back to the car chooser Program!!")
 
+# # step 1 : get string of cars
+# cars = input("Enter names of cars seperated by comma and a space ")
 
+# # step 2 : split the string using the split() function
+# list_of_cars = cars.split(", ")
 
+# # step 3 : choose a random car from the list of cars
+# random_car = random.choice(list_of_cars)
 
-
+# #  step 4 : prin the random car
+# print(f"You should get a {random_car}")
