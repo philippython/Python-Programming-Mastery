@@ -1,36 +1,75 @@
-# declaring a function
-# def greet():
-#     """This function is a simple greet function"""
-#     print("Hello, how are you doing!")
+# # declaring function
+# def greeting():
+#     # function body
+#     # function dcstring: optional
+#     """
+#     this function prints a greet message in the console
+#     it does not take any parameter and doesn't return any value
+#     """
 
-# calling the function
-# greet()   
-# to access the docstring of a python function functionname.__doc__ 
-# print(greet.__doc__)
+#     name = input("What is your name ")
 
-# def evenOdd():
-#     num = int(input("enter a number"))
-#     if num % 2 == 0 :
-#         print("Number is even")
-#     else:
-#         print("number is odd")
+#     greet_message = f"Hello {name}, Welcome this is my first python function"
 
-# evenOdd()
-# print(evenOdd.__doc__)
+#     print(greet_message)
 
-def age():
-    # this function's logic is yet to be known
-    birth_year = int(input("What is your birth year? "))
+# # calling the function greeting
+# greeting()
+
+# # dunder method / magic method
+# # __doc__
+# print(greeting.__doc__)
+
+# def passer():
+#     pass 
+#     # pass keyword is a placeholder and it doesn't invoke ay action in our code
+
+
+# passer()
+
+# simple interest = principal * rate * time 
+# at pooint of declaration pricipal, rate and time are parameters
+# def simpleInterest(principal, rate, time):
+#     """
+#     this is a function to calculate simple interest
+#     """
+#     interest = ( principal * time ) * rate / 100
+#     print(interest)
+
+# at point of call pricipal, rate and time are arguments
+# simpleInterest(7000, 5, 1)
+
+# 1. Positional argument
+# 2. keyword argument
+# 3. default argument
+def ageCalc(name, birth_year=1998):
+    """ simple function to print your age and name"""
+    print(name)
+    print(birth_year)
     age = 2023 - birth_year 
-    if age > 18 :
-        print(f"User is an adult, he/she is {age}")
-    else:
-        pass
+    # 2023 - "philip"
+    print(f"{name} is {age} years old!")
 
-age()
+# ageCalc(name="philip", birth_year=2004)
+# ageCalc("philip", 2004)
+ageCalc("philip", 2004)
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 
 
 
