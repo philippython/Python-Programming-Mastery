@@ -139,7 +139,7 @@ def game():
             print(f"You have gotten the correct number, You've won {win_emoji}")
             break
     
-    if total_chances.count('💖') == 0: print(f"You're put of chances, You've lost {lose_emoji}") 
+    if total_chances.count('💖') == 0: print(f"You're out of chances, You've lost {lose_emoji}") 
 
 game()
 
