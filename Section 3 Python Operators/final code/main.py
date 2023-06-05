@@ -3,7 +3,7 @@
 bill = 5_000
 tax = 200
 salary = 100_000
-# print(salary)
+# print(salary) 
 
 # addition operation
 # total = bill + tax
