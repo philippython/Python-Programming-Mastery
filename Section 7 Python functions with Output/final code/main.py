@@ -225,19 +225,6 @@ import random
 # greetOne = greet("spanish")
 # greetingOne = greetOne("Philip")
 # print(greetingOne)
-# def create_discount_calculator(discount_percentage):
-
-#     shopping_mail = "Walmart"
-
-#     def calculate_discounted_cost(cart_items):
-#         total_cost = sum(cart_items)
-#         discount = (total_cost * discount_percentage) / 100
-#         discounted_cost = total_cost - discount
-#         print(f"Thanks for choosing {shopping_mail}")
-#         return discounted_cost
-
-#     return calculate_discounted_cost
-
 
 # variable = 34
 
@@ -260,39 +247,35 @@ import random
 # for i in  range(4):
 #     print(buddy_count())
 
+# Shopping Cart Discount challenge
 
+# The task involves creating a discount calculator function that calculates the discounted cost of a shopping cart based 
+# on a given discount percentage. The function takes the discount percentage as input and returns another function, which 
+# can be used to calculate the discounted cost of a list of items in the shopping cart.
 
+# Inside the returned function, the total cost of the items is calculated by summing up the individual costs.
+# Then, the discount amount is calculated by multiplying the total cost with the discount percentage and dividing 
+# it by 100. The discounted cost is obtained by subtracting the discount amount from the total cost.
 
+# The returned function also prints a message, thanking the user for choosing a specific shopping mall 
+# (e.gThanks for choosing  "Walmart"). Finally, the discounted cost is returned as the output of the function
+# from typing import List
 
+# def discount_calculator_percentage(discount_percentage: float):
+#         shoppingmall_name = "walmart"
 
+#         def calculate_discount_price(items: List):
+#             total = sum(items) 
+#             discount_amount = total * discount_percentage / 100
+#             discounted_cost = total - discount_amount
+#             print(f"You have enjoyed a discount of {discount_percentage}, the total cost is {total} and the discounted cost is {discounted_cost}")
+#             print(f"Thanks for chossing {shoppingmall_name}")
+#             return discounted_cost
+        
+#         return calculate_discount_price
+        
+# cart = [67.90, 678, 450, 34]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# discount_ten_percent = discount_calculator_percentage(10)
+# discount_price_on_10 = discount_ten_percent(cart)
+# print(discount_price_on_10)
