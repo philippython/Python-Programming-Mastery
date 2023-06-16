@@ -27,27 +27,27 @@
 # print(type(usman))
 
 
-class Person:
+# class Person:
 
-    def __init__(self, name, age, occcupation):
-        self.age = age
-        self.name = name
-        self.occupation = occcupation
+#     def __init__(self, name, age, occcupation):
+#         self.age = age
+#         self.name = name
+#         self.occupation = occcupation
 
-    def introduce(self):
-        print(f"My name is {self.name} i am {self.age} yrs old and My occupation is {self.occupation}") 
+#     def introduce(self):
+#         print(f"My name is {self.name} i am {self.age} yrs old and My occupation is {self.occupation}") 
 
-    def change_occupation(self, new_occupation):
-        self.occupation = new_occupation          
+#     def change_occupation(self, new_occupation):
+#         self.occupation = new_occupation          
 
-caroline = Person("Caroline Jessica", 27, "Sailor")
-philip = Person("Odulaja Philip", 19, "Python Engineer and Instructor")
+# caroline = Person("Caroline Jessica", 27, "Sailor")
+# philip = Person("Odulaja Philip", 19, "Python Engineer and Instructor")
 
-caroline.introduce()
-philip.introduce()
+# caroline.introduce()
+# philip.introduce()
 
-caroline.change_occupation("Teacher")
-print(caroline.occupation)
+# caroline.change_occupation("Teacher")
+# print(caroline.occupation)
 
 
 
