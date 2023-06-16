@@ -121,15 +121,15 @@
 # The Vehicle class should have the following methods:
 
 # get_details(): Prints the details of the vehicle, including the manufacturer, model, and year.
-class Vehicle:
+# class Vehicle:
 
-    def __init__(self, manufacturer: str, model: str, year:int) -> None:
-        self.manufacturer = manufacturer
-        self.model = model
-        self.year = year
+#     def __init__(self, manufacturer: str, model: str, year:int) -> None:
+#         self.manufacturer = manufacturer
+#         self.model = model
+#         self.year = year
         
-    def get_details(self):
-        print(f"This vehicle was manufactured by {self.manufacturer} model {self.model} built in year {self.year}")
+#     def get_details(self):
+#         print(f"This vehicle was manufactured by {self.manufacturer} model {self.model} built in year {self.year}")
 
 # Implement the following derived classes:
 
@@ -138,39 +138,39 @@ class Vehicle:
 # Inherits from Vehicle.
 # Should have an additional attribute called num_doors (integer) representing the number of doors the car has.
 
-class Car(Vehicle):
+# class Car(Vehicle):
 
-    def __init__(self, manufacturer: str, model: str, year: int, num_doors: int) -> None:
-        super().__init__(manufacturer, model, year)
-        self.num_doors = num_doors
+#     def __init__(self, manufacturer: str, model: str, year: int, num_doors: int) -> None:
+#         super().__init__(manufacturer, model, year)
+#         self.num_doors = num_doors
 
-    def get_details(self):
-        print(f"{self.manufacturer} built model {self.model} with {self.num_doors} doors in the year {self.year}")
+#     def get_details(self):
+#         print(f"{self.manufacturer} built model {self.model} with {self.num_doors} doors in the year {self.year}")
 
 # b) Motorcycle class:
 
 # Inherits from Vehicle.
 # Should have an additional attribute called top_speed (float) representing the maximum speed of the motorcycle.
 
-class MotorCycle(Vehicle):
+# class MotorCycle(Vehicle):
 
-    def __init__(self, manufacturer: str, model: str, year: int, top_speed) -> None:
-        super().__init__(manufacturer, model, year)
-        self.top_speed = top_speed
+#     def __init__(self, manufacturer: str, model: str, year: int, top_speed) -> None:
+#         super().__init__(manufacturer, model, year)
+#         self.top_speed = top_speed
 
-    def get_details(self):
-        print(f"{self.manufacturer} built model {self.model} with a top speed of {self.top_speed} in the year {self.year}")
+#     def get_details(self):
+#         print(f"{self.manufacturer} built model {self.model} with a top speed of {self.top_speed} in the year {self.year}")
 # c) Truck class:
 
 # Inherits from both Car and Vehicle.
-class Truck(Car):
+# class Truck(Car):
 
-    def __init__(self, manufacturer: str, model: str, year: int, num_doors: int, cargo_capacity: float) -> None:
-        super().__init__(manufacturer, model, year, num_doors)
-        self.cargo_capacity = cargo_capacity
+#     def __init__(self, manufacturer: str, model: str, year: int, num_doors: int, cargo_capacity: float) -> None:
+#         super().__init__(manufacturer, model, year, num_doors)
+#         self.cargo_capacity = cargo_capacity
 
-    def get_details(self):
-        print(f"{self.manufacturer} built model {self.model} with a cargo capacity of {self.cargo_capacity} with {self.num_doors} doors in the year {self.year}")
+#     def get_details(self):
+#         print(f"{self.manufacturer} built model {self.model} with a cargo capacity of {self.cargo_capacity} with {self.num_doors} doors in the year {self.year}")
 
 # Should have an additional attribute called cargo_capacity (float) representing the maximum cargo capacity in tons.
 # Override the get_details() method in each derived class to display the specific details of that vehicle type. For example:
@@ -180,18 +180,17 @@ class Truck(Car):
 # For a truck, the output should include the cargo capacity.
 # Your task is to implement the above class hierarchy and test it by creating instances of each class and calling their respective get_details() methods.
 
+# volvo = Vehicle("Volvo", "PPM67959", 2007)
+# volvo.get_details()
 
-volvo = Vehicle("Volvo", "PPM67959", 2007)
-volvo.get_details()
+# toyota = Car("Toyota", "Corolla", 2009, 4)
+# toyota.get_details()
 
-toyota = Car("Toyota", "Corolla", 2009, 4)
-toyota.get_details()
+# bajaj = MotorCycle("Bajaj", "TRYM567", 2008, 200)
+# bajaj.get_details()
 
-bajaj = MotorCycle("Bajaj", "TRYM567", 2008, 200)
-bajaj.get_details()
-
-truck = Truck("Mistubushi", "MTS1221", 2010, 4, 700)
-truck.get_details()
+# truck = Truck("Mistubushi", "MTS1221", 2010, 4, 700)
+# truck.get_details()
 
 
 
