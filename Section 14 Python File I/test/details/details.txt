@@ -1,3 +1,0 @@
-This is the details text file
-That's within the details folder
-Which is within the test folder
