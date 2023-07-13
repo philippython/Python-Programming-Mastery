@@ -1,0 +1,35 @@
+Email: john.doe@example.com
+Phone: +1 (555) 123-4567
+
+1. Matching email addresses: 
+   - john.doe@example.com
+   - jane.smith@example.com
+
+2. Extracting phone numbers: 
+   - +1 (555) 123-4567
+   - (123) 456-7890
+
+3. Finding URLs: 
+   - http://www.example.com
+   - https://google.com
+
+4. Detecting dates: 
+   - January 1, 2022
+   - 2022-12-31
+
+5. Parsing IP addresses: 
+   - 192.168.0.1
+   - 10.0.0.1
+
+6. Identifying HTML tags: 
+   - <p>This is a paragraph.</p>
+   - <a href="http://example.com">Link</a>
+
+7. Extracting usernames: 
+   - @user123
+   - @john_doe
+
+8. Finding ZIP codes: 
+   - 12345
+   - 98052-1234
+

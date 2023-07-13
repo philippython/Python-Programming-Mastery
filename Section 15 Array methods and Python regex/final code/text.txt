@@ -1,0 +1,43 @@
+Hello HelloHello
+Matching email addresses: 
+   - john.doe@example.com
+   - jane.smith@gmail.com
+   - philipO+mary978-_@gmail.com
+   - philippython@udemy.edu
+   
+
+Extracting phone numbers: 
+   - +1 555-123-4567
+   - +234 123-456-7890
+
+Finding URLs: 
+   - http://www.example.com
+   - https://google.com
+   - https://www.wikipedia.com
+
+
+Detecting dates: 
+   - January 1, 2022
+   - 2022-12-31
+
+Parsing IP addresses: 
+   - 192.168.0.1
+   - 10.0.0.1
+
+Identifying HTML tags: 
+   - <p>This is a paragraph.</p>
+   - <a href="http://example.com">Link</a>
+
+Extracting usernames: 
+   - @user123
+   - @johndoe
+   - @philippython
+
+Finding ZIP codes: 
+   - 12345
+   - 98052-1234
+
+Names: 
+Mr Thomas
+Mrs Mayowa
+Ms Johnson
