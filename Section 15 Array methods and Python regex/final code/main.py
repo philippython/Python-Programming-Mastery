@@ -61,9 +61,7 @@ bank_transactions = [90.96, 67.45, 78.90, -23.67, 45.00, -700, 340.13, 56.8, 89]
 #                 )))
 # print(total_revenue)
 
-
-
-sentence = "I'm Philip and i would be the best\nI'm 19"
+# sentence = "I'm Philip and i would be the best\nI'm 19"
 # print(sentence[4:10])
 # pattern = re.compile(r"i", flags=re.I)
 # pattern = re.compile(r".", flags=re.DOTALL)
@@ -78,19 +76,19 @@ sentence = "I'm Philip and i would be the best\nI'm 19"
 # string and raw string
 # print("\tMy name is philip\nI'm 19")
 # print(r"\tMy name is philip\nI'm 19")
-with open(r"Section 15 Array methods and Python regex\final code\text.txt", "r") as text:
-    contents = text.read()
+# with open(r"Section 15 Array methods and Python regex\final code\text.txt", "r") as text:
+#     contents = text.read()
     # pattern = re.compile(r"\B@\w{7,15}")
     # pattern = re.compile(r"https?://(www.)?\w+.com")
     # pattern = re.compile(r"[+]\d{1,3}\s\d{3}-\d{3}-\d{4}")
     # pattern = re.compile(r"[a-zA-Z0-9+-_].[0-9].[0-9].[0.9]")
     # pattern = re.compile(r"\w{1,3}[.]\w{1,3}[.]\w{1,3}[.]\w{1,3}")
     # pattern = re.compile(r"(Mr|Mrs|Ms)\s[A-Z]\w+")
-    pattern = re.compile(r"[a-zA-Z0-9+-_.]+@[a-z]+(.com|.edu)")
+    # pattern = re.compile(r"[a-zA-Z0-9+-_.]+@[a-z]+(.com|.edu)")
 
-    matches = pattern.finditer(contents)
-    for match in matches:
-        print(match)
+    # matches = pattern.finditer(contents)
+    # for match in matches:
+    #     print(match)
 
 
 # Your task is to create a sentimental analysis tool using regular expressions (regex)
@@ -111,10 +109,25 @@ with open(r"Section 15 Array methods and Python regex\final code\text.txt", "r")
 # I had a terrible experience.
 # The weather is okay.
 
+def sentiment_analysis(text: str):
+    """This function returns Positive, negative or neutral sentitment"""
+    positive_pattern = re.compile(r"(good|great|amazing|awesome)",flags=re.I)
+    negative_pattern = re.compile(r"(bad|terrible|awful)",flags=re.I)
+
+    positive_matches = re.findall(positive_pattern, text)
+    negative_matches = re.findall(negative_pattern, text)
+
+    if len(positive_matches) > len(negative_matches):
+        return "Positive sentiment"
+    elif len(positive_matches) < len(negative_matches):
+        return "Negative sentiment"
+    else:
+        return "Neutral sentiment"
 
 
-
-
+print(sentiment_analysis("This movie is really good!"))
+print(sentiment_analysis("I had a terrible experience."))
+print(sentiment_analysis("The weather is okay."))
 
 
 
