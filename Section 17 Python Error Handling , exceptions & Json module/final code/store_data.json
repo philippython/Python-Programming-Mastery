@@ -1,0 +1,94 @@
+{
+   "store": {
+    "name": "SuperStore",
+    "location": "New York",
+    "departments": [
+      {
+        "name": "Electronics",
+        "categories": [
+          {
+            "name": "Computers",
+            "products": [
+              {
+                "id": "12345",
+                "name": "Laptop",
+                "brand": "ABC",
+                "price": 999.99,
+                "availability": true
+              },
+              {
+                "id": "67890",
+                "name": "Desktop",
+                "brand": "XYZ",
+                "price": 799.99,
+                "availability": false
+              }
+            ]
+          },
+          {
+            "name": "Mobile Phones",
+            "products": [
+              {
+                "id": "54321",
+                "name": "iPhone",
+                "brand": "Apple",
+                "price": 1299.99,
+                "availability": true
+              },
+              {
+                "id": "09876",
+                "name": "Galaxy",
+                "brand": "Samsung",
+                "price": 1099.99,
+                "availability": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Clothing",
+        "categories": [
+          {
+            "name": "Men's",
+            "products": [
+              {
+                "id": "11111",
+                "name": "T-Shirt",
+                "brand": "Nike",
+                "price": 29.99,
+                "availability": true
+              },
+              {
+                "id": "22222",
+                "name": "Jeans",
+                "brand": "Levi's",
+                "price": 79.99,
+                "availability": true
+              }
+            ]
+          },
+          {
+            "name": "Women's",
+            "products": [
+              {
+                "id": "33333",
+                "name": "Dress",
+                "brand": "Zara",
+                "price": 59.99,
+                "availability": true
+              },
+              {
+                "id": "44444",
+                "name": "Shoes",
+                "brand": "Adidas",
+                "price": 89.99,
+                "availability": false
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
