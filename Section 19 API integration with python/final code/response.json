@@ -1,0 +1,263 @@
+{
+    "status": 200,
+    "warning": "These results do not include state and province holidays. For more information, please visit https://holidayapi.com/docs",
+    "requests": {
+        "used": 10,
+        "available": 9990,
+        "resets": "2023-08-01 00:00:00"
+    },
+    "holidays": [
+        {
+            "name": "New Year's Day",
+            "date": "2022-01-01",
+            "observed": "2022-01-03",
+            "public": true,
+            "country": "NG",
+            "uuid": "ff2537bb-c062-4cdb-ab07-ed79e181218d",
+            "weekday": {
+                "date": {
+                    "name": "Saturday",
+                    "numeric": "6"
+                },
+                "observed": {
+                    "name": "Monday",
+                    "numeric": "1"
+                }
+            }
+        },
+        {
+            "name": "Good Friday",
+            "date": "2022-04-15",
+            "observed": "2022-04-15",
+            "public": true,
+            "country": "NG",
+            "uuid": "e9796309-cdfe-4cc6-bde4-613f3f5e9424",
+            "weekday": {
+                "date": {
+                    "name": "Friday",
+                    "numeric": "5"
+                },
+                "observed": {
+                    "name": "Friday",
+                    "numeric": "5"
+                }
+            }
+        },
+        {
+            "name": "Easter Monday",
+            "date": "2022-04-18",
+            "observed": "2022-04-18",
+            "public": true,
+            "country": "NG",
+            "uuid": "9fb39255-24af-4ddd-9c28-af472b211c54",
+            "weekday": {
+                "date": {
+                    "name": "Monday",
+                    "numeric": "1"
+                },
+                "observed": {
+                    "name": "Monday",
+                    "numeric": "1"
+                }
+            }
+        },
+        {
+            "name": "Workers' Day",
+            "date": "2022-05-01",
+            "observed": "2022-05-02",
+            "public": true,
+            "country": "NG",
+            "uuid": "272436b8-4049-4809-8c3f-390553bd3aeb",
+            "weekday": {
+                "date": {
+                    "name": "Sunday",
+                    "numeric": "7"
+                },
+                "observed": {
+                    "name": "Monday",
+                    "numeric": "1"
+                }
+            }
+        },
+        {
+            "name": "Festival of Breaking the Fast",
+            "date": "2022-05-03",
+            "observed": "2022-05-03",
+            "public": true,
+            "country": "NG",
+            "uuid": "6ebec90f-7e4c-4c20-84b1-286a8e0f9957",
+            "weekday": {
+                "date": {
+                    "name": "Tuesday",
+                    "numeric": "2"
+                },
+                "observed": {
+                    "name": "Tuesday",
+                    "numeric": "2"
+                }
+            }
+        },
+        {
+            "name": "Democracy Day",
+            "date": "2022-06-12",
+            "observed": "2022-06-13",
+            "public": true,
+            "country": "NG",
+            "uuid": "2f97afbf-7df6-484c-b2c9-281e53474755",
+            "weekday": {
+                "date": {
+                    "name": "Sunday",
+                    "numeric": "7"
+                },
+                "observed": {
+                    "name": "Monday",
+                    "numeric": "1"
+                }
+            }
+        },
+        {
+            "name": "Day before the Feast of the Sacrifice",
+            "date": "2022-07-09",
+            "observed": "2022-07-09",
+            "public": true,
+            "country": "NG",
+            "uuid": "8d2fa0f1-92a5-4db4-a8d3-8aee5419db77",
+            "weekday": {
+                "date": {
+                    "name": "Saturday",
+                    "numeric": "6"
+                },
+                "observed": {
+                    "name": "Saturday",
+                    "numeric": "6"
+                }
+            }
+        },
+        {
+            "name": "Feast of the Sacrifice",
+            "date": "2022-07-10",
+            "observed": "2022-07-10",
+            "public": true,
+            "country": "NG",
+            "uuid": "935d8029-c429-4fe9-b2a6-576f21d2983a",
+            "weekday": {
+                "date": {
+                    "name": "Sunday",
+                    "numeric": "7"
+                },
+                "observed": {
+                    "name": "Sunday",
+                    "numeric": "7"
+                }
+            }
+        },
+        {
+            "name": "Day after the Feast of the Sacrifice",
+            "date": "2022-07-11",
+            "observed": "2022-07-11",
+            "public": true,
+            "country": "NG",
+            "uuid": "3a560dfa-c43d-400e-bc65-e88035247f02",
+            "weekday": {
+                "date": {
+                    "name": "Monday",
+                    "numeric": "1"
+                },
+                "observed": {
+                    "name": "Monday",
+                    "numeric": "1"
+                }
+            }
+        },
+        {
+            "name": "Third Day of the Feast of the Sacrifice",
+            "date": "2022-07-12",
+            "observed": "2022-07-12",
+            "public": true,
+            "country": "NG",
+            "uuid": "3915a4e1-771a-446e-bf99-a38ae86a400b",
+            "weekday": {
+                "date": {
+                    "name": "Tuesday",
+                    "numeric": "2"
+                },
+                "observed": {
+                    "name": "Tuesday",
+                    "numeric": "2"
+                }
+            }
+        },
+        {
+            "name": "Independence Day",
+            "date": "2022-10-01",
+            "observed": "2022-10-03",
+            "public": true,
+            "country": "NG",
+            "uuid": "62c96552-ef60-4a96-9fdc-f4c9e3371fde",
+            "weekday": {
+                "date": {
+                    "name": "Saturday",
+                    "numeric": "6"
+                },
+                "observed": {
+                    "name": "Monday",
+                    "numeric": "1"
+                }
+            }
+        },
+        {
+            "name": "Birth of the Prophet",
+            "date": "2022-10-10",
+            "observed": "2022-10-10",
+            "public": true,
+            "country": "NG",
+            "uuid": "b26defde-7e20-4f2d-ace4-cf3f3f0268f9",
+            "weekday": {
+                "date": {
+                    "name": "Monday",
+                    "numeric": "1"
+                },
+                "observed": {
+                    "name": "Monday",
+                    "numeric": "1"
+                }
+            }
+        },
+        {
+            "name": "Boxing Day",
+            "date": "2022-12-26",
+            "observed": "2022-12-26",
+            "public": true,
+            "country": "NG",
+            "uuid": "882a5715-b029-4450-b1f9-2f3bfe267f8e",
+            "weekday": {
+                "date": {
+                    "name": "Monday",
+                    "numeric": "1"
+                },
+                "observed": {
+                    "name": "Monday",
+                    "numeric": "1"
+                }
+            }
+        },
+        {
+            "name": "Christmas Day",
+            "date": "2022-12-25",
+            "observed": "2022-12-27",
+            "public": true,
+            "country": "NG",
+            "uuid": "3212de74-6439-43d4-9131-608553356738",
+            "weekday": {
+                "date": {
+                    "name": "Sunday",
+                    "numeric": "7"
+                },
+                "observed": {
+                    "name": "Tuesday",
+                    "numeric": "2"
+                }
+            }
+        }
+    ]
+}
