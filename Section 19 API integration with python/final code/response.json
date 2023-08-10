@@ -2,8 +2,8 @@
     "status": 200,
     "warning": "These results do not include state and province holidays. For more information, please visit https://holidayapi.com/docs",
     "requests": {
-        "used": 10,
-        "available": 9990,
+        "used": 12,
+        "available": 9988,
         "resets": "2023-08-01 00:00:00"
     },
     "holidays": [

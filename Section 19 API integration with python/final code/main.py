@@ -17,9 +17,9 @@ paramaters = {
     "year" : datetime.now().year - 1,
     "public" : True
 }
-response = requests.get(f"{API_BASE_URL}/v3.1/all?fields=name,flags")
-json_data = response.json()
-pprint.pprint(json_data)
+# response = requests.get(f"{API_BASE_URL}/v3.1/all?fields=name,flags")
+# json_data = response.json()
+# pprint.pprint(json_data)
 
 try: 
     response = requests.get(f"{API_BASE_URL}v1/holidays", params=paramaters)
