@@ -84,40 +84,6 @@ print(float_age)
 # print(type(str_cost))
 # print(type(str_age))
 # print(int_musk)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # programming_lng = input("What is your favorite programming language?")
 # print(type(programming_lng))
 # print(programming_lng)
