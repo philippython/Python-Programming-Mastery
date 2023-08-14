@@ -173,6 +173,53 @@ available_bullets = 12
 
 # print(not False)
 
+# number checker
+# number = int(input("Enter a number "))
+
+# creating conditional statement
+# if number == 0:
+#     print("Number is 0")
+# elif number < 0 :
+#     print("number is negative")
+# else:
+#     print("number is positive")
+
+user_response = input("Are you hungry? ")
+
+# outer/top conditional statement
+if user_response == "yes":
+    print("Go to the grocery store")
+    chocolate_price = float(input("How much is the chocolate? "))
+    # inner conditional statement
+    if chocolate_price <= 1:
+        print("Buy 3")
+    else:
+        print("Buy 1")
+elif user_response == "no":
+    print("Stay at home")
+    fortnite = input("Do you want to play fortnite? ")
+    # nested if else statement 
+    if fortnite == "yes":
+        print("See you next week")
+    elif fortnite == "no":
+        print("Go back to study")
+        subject =  input("What is your favorite subject? ")
+        if subject == "computer science":
+            print("That's my favorite langauage")
+        else:
+            print("we have nothing in common")
+    else:
+        print("Invalid response")
+else:
+    print("Invalid response")
+
+
+
+
+
+
+
+
 
 
 
