@@ -174,47 +174,25 @@ available_bullets = 12
 # print(not False)
 
 
-# number checker
 
-# number = int(input("Enter a number "))
 
-# # outer if statement
-# if number < 0 :
-#     print("Number is negative")
-# else:
-#     # inner if statement
-#     if number == 0 :
-#         print("Number is zero")
-#     else:
-#         print("Number is positive")
 
-# is_hungry = input("Are you hungry? ")
 
-# if is_hungry == "yes" :
-#     print("Go to grocery store")
-#     # inner if..else condition 
-#     cost = float(input("How much does a chocolate cost ?"))
-#     if cost <= 1 :
-#         print("Buy 3 chocolates")
-#     else :
-#         print("Buy 1 choclate")
-# elif is_hungry == "no":
-#     print("Stay at home")
-#     interested_in_game = input("Do you want to play fortnite? ")
-#     # first inner if.. else conditional statement
-#     if interested_in_game == "yes":
-#         print("See you next week")
-#     elif interested_in_game == "no":
-#         print("Go back to study")
-#         # creating another input function
-#         fav_subject = input("What is your favorite subject? ")
-#         # inner if..else statement conditional statement
-#         if fav_subject == "computer science" :
-#             print("That is my favorite subject")
-#         else : 
-#             print("We have nothing in common")
-# else:
-#     print("Invalid Reponse")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # solution to football admin project
@@ -262,7 +240,7 @@ salary = "000"
 
 # shorthand if...else statement
 # do this if condition is true else do something else
-print("salary is poor ") if salary == "5000" else print("salary is high")
+# print("salary is poor ") if salary == "5000" else print("salary is high")
 
 # if salary == "5000":
 #     print("salary is poor")
