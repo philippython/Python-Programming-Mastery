@@ -184,63 +184,34 @@ available_bullets = 12
 # else:
 #     print("number is positive")
 
-user_response = input("Are you hungry? ")
+# user_response = input("Are you hungry? ")
 
-# outer/top conditional statement
-if user_response == "yes":
-    print("Go to the grocery store")
-    chocolate_price = float(input("How much is the chocolate? "))
-    # inner conditional statement
-    if chocolate_price <= 1:
-        print("Buy 3")
-    else:
-        print("Buy 1")
-elif user_response == "no":
-    print("Stay at home")
-    fortnite = input("Do you want to play fortnite? ")
-    # nested if else statement 
-    if fortnite == "yes":
-        print("See you next week")
-    elif fortnite == "no":
-        print("Go back to study")
-        subject =  input("What is your favorite subject? ")
-        if subject == "computer science":
-            print("That's my favorite langauage")
-        else:
-            print("we have nothing in common")
-    else:
-        print("Invalid response")
-else:
-    print("Invalid response")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# # outer/top conditional statement
+# if user_response == "yes":
+#     print("Go to the grocery store")
+#     chocolate_price = float(input("How much is the chocolate? "))
+#     # inner conditional statement
+#     if chocolate_price <= 1:
+#         print("Buy 3")
+#     else:
+#         print("Buy 1")
+# elif user_response == "no":
+#     print("Stay at home")
+#     fortnite = input("Do you want to play fortnite? ")
+#     # nested if else statement 
+#     if fortnite == "yes":
+#         print("See you next week")
+#     elif fortnite == "no":
+#         print("Go back to study")
+#         subject =  input("What is your favorite subject? ")
+#         if subject == "computer science":
+#             print("That's my favorite langauage")
+#         else:
+#             print("we have nothing in common")
+#     else:
+#         print("Invalid response")
+# else:
+#     print("Invalid response")
 
 # solution to football admin project
 # match_status = input("What is the status of the match? ")
