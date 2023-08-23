@@ -1,5 +1,6 @@
 from flet import *
 from data import *
+import random
 
 class SignUp(UserControl):
 
@@ -8,12 +9,34 @@ class SignUp(UserControl):
         super().__init__()
 
     def to_onboarding(self, event):
-        print("click")
         self.page.go("/")
 
     def confirm(self, event):
-        if self.password.content.value == self.confirm_password.content.value and self.email != "":
-            self.page.go("/signup/success")
+        if self.email.content.value != "" :
+            if self.password.content.value == self.confirm_password.content.value and len(self.password.content.value) >= 5:
+                user_instance = {
+                    "full_name" : self.fullname.content.value,
+                    "email" : self.email.content.value,
+                    "password" : self.password.content.value,
+                    "account_no" : str(random.randrange(1_000_000_000_000_000, 2_000_000_000_000_000)),
+                    "balance" : 1500.00,
+                    "transactions" : []
+                }
+                if self.page.client_storage.contains_key("users"):
+                    # adding new users to "users" list
+                    user_data = self.page.client_storage.get("users")
+                    user_data.append(user_instance)
+                    self.page.client_storage.set("users", user_data)
+
+                    # adding new accoutnumber to "account_numbers"
+                    account_details = self.page.client_storage.get("account_numbers")
+                    account_details[self.fullname.content.value] = user_instance["account_no"]
+                    self.page.client_storage.set("account_numbers", account_details)
+                else:
+                    self.page.client_storage.set("users", [user_instance])
+                    self.page.client_storage.set("account_numbers", {self.fullname.content.value : user_instance["account_no"]})
+
+                self.page.go("/signup/success")
 
     def build(self):
         self.back_arrow = Container(
@@ -45,6 +68,14 @@ class SignUp(UserControl):
         self.password_label = Text("Enter Password", size = 14, color= colors.WHITE, weight= FontWeight.W_300)
         self.confirm_password_label = Text("Confirm Password", size = 14, color= colors.WHITE, weight= FontWeight.W_300)
 
+        self.fullname = Container(
+            bgcolor= colors.WHITE,
+            border_radius= 10,
+            content= TextField(
+                border= InputBorder.NONE,
+                cursor_color= colors.BLACK
+            )
+        )
         self.email = Container(
             bgcolor= colors.WHITE,
             border_radius= 10,
@@ -101,6 +132,7 @@ class SignUp(UserControl):
             controls = [
                 self.back_arrow,
                 self.email_passowrd,
+                self.fullname,
                 self.email_label,
                 self.email,
                 self.password_label,

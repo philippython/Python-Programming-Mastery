@@ -10,7 +10,6 @@ def main(page: Page):
     page.theme = Theme(font_family="Poppins")
     
     def route_change(event : RouteChangeEvent):
-        
         page.views.clear()
         page.views.append(
             routes.router(page)[page.route]
@@ -20,4 +19,4 @@ def main(page: Page):
     page.go('/')
     
 
-app(main, assets_dir="assets", view=AppView.FLET_APP_WEB)
+app(main, assets_dir="assets",view=AppView.FLET_APP_WEB)

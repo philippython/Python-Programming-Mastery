@@ -1,5 +1,7 @@
 from flet import *
 from data import *
+from helper import user_info, generate_initial
+import math
 
 class DashBoard(UserControl):
 
@@ -22,7 +24,41 @@ class DashBoard(UserControl):
     def account_information(self, event):
         self.page.go("/account-information")
 
+    def update_avatar(self):
+        users_data = self.page.client_storage.get('users')
+        active_user = self.page.client_storage.get('active_user')
+
+        user = user_info(users_data, active_user)['full_name']
+        # Odulaja philip temitayo
+
+        self.profile_avatar.content.content.value = generate_initial(user)
+
+    def did_mount(self):
+        users_data = self.page.client_storage.get('users')
+        active_user = self.page.client_storage.get('active_user')
+
+        logged_in_user = user_info(users_data, active_user)
+        logged_in_user_balance = logged_in_user['balance']
+
+        # format(8900, ",") -> 8,900
+        self.total_balance.spans[0].text = "\n£" + str(format(int(logged_in_user_balance), ","))
+        #  1560.90 -> 1560 529.515 - 529 = 0.515[1:] 0.515
+        cents = round(logged_in_user_balance - int(logged_in_user_balance), 2)
+        self.total_balance.spans[1].text = str(cents)[1:]
+
+        self.income.controls[1].value = "£ 0"  if logged_in_user['transactions'] == [] else "£ 0"
+        self.income.controls[1].spans[0].text = ".00" if logged_in_user['transactions'] == [] else ".00"
+        
+        self.expenditure.controls[1].value = "£ 0"  if logged_in_user['transactions'] == [] else "£ 0"
+        self.expenditure.controls[1].spans[0].text = ".00" if logged_in_user['transactions'] == [] else ".00"
+        
+        self.update_avatar()
+        self.update()
+
+        #  1862835939967470 - odulaja philip
+        #  1748095829443070 - leaonard
     def build(self):
+
         self.settings = Container(
             alignment= alignment.center,
             border_radius= 10,
@@ -38,7 +74,7 @@ class DashBoard(UserControl):
                             border_radius= 20,
                             padding = 5,
                             content=CircleAvatar(
-                            foreground_image_url= AVATAR_IMAGE_URL,
+                                content = Text("F", color=colors.GREY_500, size=14),
                             )
         )
         self.notifications = Stack(
@@ -79,7 +115,7 @@ class DashBoard(UserControl):
                                 text_align= TextAlign.CENTER,
                                 spans = [
                                     TextSpan(
-                                        text = "\n£ 23,980",
+                                        text = f"\n£ 8,900",
                                         style= TextStyle(
                                             size= 30,
                                             weight= FontWeight.BOLD,

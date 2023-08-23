@@ -1,5 +1,6 @@
 from flet import *
 from data import *
+from helper import user_info
 
 class Security(UserControl):
 
@@ -9,6 +10,22 @@ class Security(UserControl):
 
     def dashboard(self, event):
         self.page.go("/dashboard")
+
+    def update_password(self, event):
+        # confirm that old password
+        users_data = self.page.client_storage.get('users')
+        active_user = self.page.client_storage.get('active_user')
+
+        active_user_dict = user_info(users_data, active_user)
+        old_password = active_user_dict['password']
+        if old_password == self.old_password.content.value : 
+            if self.new_password.content.value == self.confirm_password.content.value and len(self.confirm_password.content.value) >= 5 :
+                active_user_dict['password'] = self.new_password.content.value
+                user_id = users_data.index(active_user_dict)
+                users_data[user_id] = active_user_dict
+                self.page.client_storage.set("users", users_data)
+
+                self.page.go('/login')
 
     def build(self):
         self.top = Container(
@@ -30,7 +47,7 @@ class Security(UserControl):
                                 border_radius = 10,
                                 bgcolor = GREEN_COLOR,
                                 padding = 5,
-                                on_click = self.dashboard,
+                                on_click = self.update_password,
                                 content = Text("update", color= colors.WHITE, size=15, weight=FontWeight.W_400)
                             ),
                         ]

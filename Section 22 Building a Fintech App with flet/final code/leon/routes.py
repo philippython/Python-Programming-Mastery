@@ -9,6 +9,7 @@ from views.transfer import Transfer
 from views.transfer_success import TransferSuccess
 from views.security import Security
 from views.settings import AccountInformation
+from views.update_profile import UpdateProfile
 
 def router(page: Page):
 
@@ -70,6 +71,12 @@ def router(page: Page):
         "/account-information": View(
             page.route,
             [AccountInformation(page)],
+            bgcolor = colors.BLACK,
+            padding = 0
+        ),
+        "/update-account-information": View(
+            page.route,
+            [UpdateProfile(page)],
             bgcolor = colors.BLACK,
             padding = 0
         )

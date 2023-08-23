@@ -10,7 +10,13 @@ class Login(UserControl):
         self.page.go("/")
 
     def login(self, event):
-        self.page.go("/dashboard")
+        if self.email.content.value != "" and self.password.content.value != "":
+            if self.page.client_storage.contains_key("users"):
+                user_data = self.page.client_storage.get("users")
+                for user in user_data:
+                    if user["email"] == self.email.content.value and user["password"] == self.password.content.value:
+                        self.page.client_storage.set("active_user", user["email"])
+                        self.page.go("/dashboard")
         
     def build(self):
         self.back_arrow = Container(

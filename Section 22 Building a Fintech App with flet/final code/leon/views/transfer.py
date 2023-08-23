@@ -1,9 +1,12 @@
 from flet import *
 from data import *
+from helper import user_info, generate_initial , user_info_name
+from datetime import datetime
 
 class Transfer(UserControl):
     def __init__(self, page):
         self.page = page
+        self.user_data = None
         super().__init__()
 
     def dashboard(self, event):
@@ -16,17 +19,128 @@ class Transfer(UserControl):
         self.page.go("/transfer")
     
     def account_number_update(self, event):
-        if len(event.control.value) == 19:
-            self.to_amount(event)
+        users_data = self.page.client_storage.get('users')
+        active_user = self.page.client_storage.get('active_user')
+
+        active_user_dict = user_info(users_data, active_user)
+        account_dict = self.page.client_storage.get('account_numbers')
+
+        if len(event.control.value) == 16:
+            for name, account_no in account_dict.items() :
+                if event.control.value == account_no :
+                    self.to_amount(event)
+                    receiver_avatar = CircleAvatar(
+                        content = Text(generate_initial(name), color=colors.GREY_500, size=14),
+                    )
+                    self.receiver_details.content.controls.pop(0)
+                    self.receiver_details.content.controls.insert(0, receiver_avatar)
+                    self.receiver_details.content.controls[1].value = name
+                    self.receiver_details.content.controls[1].spans[0].text = f"\n{account_no}"
+                    self.payment_details.content.controls[0].spans[0].text = f"£ {format(int(active_user_dict['balance']), ',')}"
+                    self.payment_details.content.controls[0].spans[1].text = f"{str(round(active_user_dict['balance'] - int(active_user_dict['balance']), 2))[1:]}"
+
+                    self.update()
+
+    def on_amount_change(self, event):
+        users_data = self.page.client_storage.get('users')
+        active_user = self.page.client_storage.get('active_user')
+        receiver_name = self.receiver_details.content.controls[1].value
+
+        active_user_dict = user_info(users_data, active_user)
+        receiver_dict = user_info_name(users_data, receiver_name)
+
+        amount = float(event.control.value) if event.control.value != "" else 0
+        commission = 0.5 / 100 * int(amount)
+        
+        self.payment_details.content.controls[2].spans[0].text = f"£ {commission}"
+        
+        total_deduction = amount + commission
+        self.update()
+        if total_deduction > active_user_dict['balance'] :
+            pass
+        else:
+            new_balance = float(active_user_dict['balance']) - total_deduction
+            debit_instance = {
+                "amount" : total_deduction,
+                "transaction_type" : "debit",
+                "receiver" : self.receiver_details.content.controls[1].value,
+                "time" : datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+            }
+
+            credit_instance = {
+                "amount" : amount,
+                "transaction_type" : "credit",
+                "sender" : active_user_dict['full_name'],
+                "time" : datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+            }
+            active_user_dict['balance'] = new_balance
+            receiver_dict['balance'] = receiver_dict['balance'] + float(amount)
+            active_user_dict['transactions'].append(debit_instance)
+            receiver_dict['transactions'].append(credit_instance)
+
+            sender_id = users_data.index(active_user_dict)
+            receiver_id = users_data.index(receiver_dict)
+
+            users_data[sender_id] = active_user_dict
+            users_data[receiver_id] = receiver_dict
+            
+            self.user_data = users_data
             self.update()
 
+
     def to_amount(self, event):
-        self.page_controls.clear()
+        self.page_controls.pop()
         self.page_controls.append(self.amount_view)
         self.update()
 
-    def send(self, text):
+    def send(self, event):
+        self.page.client_storage.set('users', self.user_data)
         self.page.go("/transfer-successful")
+
+    def did_mount(self):
+        users_data = self.page.client_storage.get('users')
+        account_numbers = self.page.client_storage.get('account_numbers')
+        active_user = self.page.client_storage.get('active_user')
+
+        active_user_dict = user_info(users_data, active_user)
+        self.sender.content.controls[0].value = active_user_dict['full_name']
+        self.sender.content.controls[1].value = active_user_dict['account_no']
+
+        transactions = active_user_dict['transactions']
+
+        for transaction in transactions:
+            if transaction['transaction_type'] == "debit":
+                beneficiary_row = Row(
+                    controls=[
+                        CircleAvatar(
+                            content= Text(generate_initial(transaction['receiver']),color= colors.GREY_400)
+                        ),
+                        Text(
+                            transaction['receiver'],
+                            color=colors.WHITE,
+                            spans=[TextSpan(
+                                text = f"\n{account_numbers[transaction['receiver']]}"
+                            )]
+                            )
+                    ]
+                )
+            elif transaction['transaction_type'] == "credit" :
+                beneficiary_row = Row(
+                    controls=[
+                        CircleAvatar(
+                            content= Text(generate_initial(transaction['sender']), color= colors.GREY_400)
+                        ),
+                        Text(
+                            transaction['sender'],
+                            color=colors.WHITE,
+                            spans=[TextSpan(
+                                text = f"\n{account_numbers[transaction['sender']]}"
+                            )]
+                            )
+                    ]
+                )
+            self.beneficiary_list.controls.append(beneficiary_row)
+        self.update()
 
     def build(self):
         self.page_description = Container(
@@ -95,7 +209,7 @@ class Transfer(UserControl):
             )
         )
 
-        self.beneficiary_list = ListView(height=610, width=400, controls=[Text("No Beneficiary yet :(", weight=FontWeight.W_300, size=13, color=colors.WHITE)])
+        self.beneficiary_list = ListView(height=610, width=400, spacing=5)
 
         self.beneficiaries = Container(
             padding= 20,
@@ -185,7 +299,14 @@ class Transfer(UserControl):
                                 style= TextStyle(
                                     color= colors.WHITE,
                                 )
-                            )
+                            ),
+                            TextSpan(
+                                ".78",
+                                style= TextStyle(
+                                    color= colors.WHITE,
+                                    weight= FontWeight.W_400,
+                                )
+                            ),
                          ]
                     ),
                     TextField(
@@ -197,6 +318,7 @@ class Transfer(UserControl):
                             color= colors.WHITE,
                             size = 35,
                         ),
+                        on_change = self.on_amount_change,
                         text_align = TextAlign.CENTER,
                         text_style = TextStyle(
                             color= colors.WHITE,
@@ -211,7 +333,7 @@ class Transfer(UserControl):
                          font_family = "Poppins",
                          spans= [
                             TextSpan(
-                                "£ 1.80",
+                                "£ 0.0",
                                 style= TextStyle(
                                     color= colors.WHITE,
                                 )
