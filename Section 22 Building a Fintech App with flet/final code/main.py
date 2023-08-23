@@ -94,9 +94,8 @@ from datetime import datetime
 # print(", ".join(names))
 
 
-formatted_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-print(formatted_date)
-
+time = "2023-08-23 15:08:12"
+print(time.split(" ")[0].split("-")[0])
 
 
 

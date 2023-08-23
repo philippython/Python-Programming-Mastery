@@ -52,7 +52,7 @@ class Transfer(UserControl):
         amount = float(event.control.value) if event.control.value != "" else 0
         commission = 0.5 / 100 * int(amount)
         
-        self.payment_details.content.controls[2].spans[0].text = f"£ {commission}"
+        self.payment_details.content.controls[2].spans[0].text = f"£ {round(commission, 2)}"
         
         total_deduction = amount + commission
         self.update()
@@ -64,14 +64,14 @@ class Transfer(UserControl):
                 "amount" : total_deduction,
                 "transaction_type" : "debit",
                 "receiver" : self.receiver_details.content.controls[1].value,
-                "time" : datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+                "time" : datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             }
 
             credit_instance = {
                 "amount" : amount,
                 "transaction_type" : "credit",
                 "sender" : active_user_dict['full_name'],
-                "time" : datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+                "time" : datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             }
             active_user_dict['balance'] = new_balance
             receiver_dict['balance'] = receiver_dict['balance'] + float(amount)
@@ -87,6 +87,8 @@ class Transfer(UserControl):
             self.user_data = users_data
             self.update()
 
+        # 1044529047629792 - odulaja philip
+        # 1158771141363890 - leonard
 
     def to_amount(self, event):
         self.page_controls.pop()
@@ -99,47 +101,34 @@ class Transfer(UserControl):
 
     def did_mount(self):
         users_data = self.page.client_storage.get('users')
-        account_numbers = self.page.client_storage.get('account_numbers')
         active_user = self.page.client_storage.get('active_user')
+        account_numbers = self.page.client_storage.get('account_numbers')
 
         active_user_dict = user_info(users_data, active_user)
+        transactions = active_user_dict['transactions']
         self.sender.content.controls[0].value = active_user_dict['full_name']
         self.sender.content.controls[1].value = active_user_dict['account_no']
 
-        transactions = active_user_dict['transactions']
-
         for transaction in transactions:
             if transaction['transaction_type'] == "debit":
-                beneficiary_row = Row(
-                    controls=[
-                        CircleAvatar(
-                            content= Text(generate_initial(transaction['receiver']),color= colors.GREY_400)
-                        ),
-                        Text(
-                            transaction['receiver'],
-                            color=colors.WHITE,
-                            spans=[TextSpan(
-                                text = f"\n{account_numbers[transaction['receiver']]}"
-                            )]
-                            )
-                    ]
+                receiver_full_name = transaction['receiver']
+                self.beneficiary_list.controls.append(
+                    Row(
+                        controls=[
+                            CircleAvatar(
+                                content = Text(generate_initial(transaction['receiver']), color=colors.GREY_500)
+                            ),
+                            Text(receiver_full_name,
+                                 color=colors.WHITE,
+                                 spans = [
+                                    TextSpan(
+                                        text= f"\n{account_numbers[receiver_full_name]}"
+                                    )
+                                 ]
+                                )
+                        ]
+                    )
                 )
-            elif transaction['transaction_type'] == "credit" :
-                beneficiary_row = Row(
-                    controls=[
-                        CircleAvatar(
-                            content= Text(generate_initial(transaction['sender']), color= colors.GREY_400)
-                        ),
-                        Text(
-                            transaction['sender'],
-                            color=colors.WHITE,
-                            spans=[TextSpan(
-                                text = f"\n{account_numbers[transaction['sender']]}"
-                            )]
-                            )
-                    ]
-                )
-            self.beneficiary_list.controls.append(beneficiary_row)
         self.update()
 
     def build(self):

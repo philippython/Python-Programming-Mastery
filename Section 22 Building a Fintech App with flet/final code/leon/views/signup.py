@@ -107,7 +107,7 @@ class SignUp(UserControl):
         )
         self.signup_btn = Container(
             on_click= self.confirm,
-            margin= margin.only(top=150, bottom=20, left=80),
+            margin= margin.only(top=100, bottom=20, left=80),
             content= ElevatedButton(
                 style= ButtonStyle(
                     color= colors.WHITE,

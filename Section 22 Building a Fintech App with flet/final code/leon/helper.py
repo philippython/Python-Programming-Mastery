@@ -12,7 +12,7 @@
             "transactions" : [
                 {
                     amount : 890.09,
-                    receiver : "bank user",
+                    receiver/sender : "bank user",
                     time : datetime
                 }
             ]

@@ -1,7 +1,7 @@
 from flet import *
 from data import *
 from helper import user_info, generate_initial
-import math
+from datetime import datetime
 
 class DashBoard(UserControl):
 
@@ -46,17 +46,22 @@ class DashBoard(UserControl):
         cents = round(logged_in_user_balance - int(logged_in_user_balance), 2)
         self.total_balance.spans[1].text = str(cents)[1:]
 
-        self.income.controls[1].value = "£ 0"  if logged_in_user['transactions'] == [] else "£ 0"
-        self.income.controls[1].spans[0].text = ".00" if logged_in_user['transactions'] == [] else ".00"
+        transactions = logged_in_user['transactions']
+        current_month_transactions = [transaction for transaction in transactions if int(transaction['time'].split(" ")[0].split("-")[0]) == datetime.now().year and int(transaction['time'].split(" ")[0].split("-")[1]) == datetime.now().month]
         
-        self.expenditure.controls[1].value = "£ 0"  if logged_in_user['transactions'] == [] else "£ 0"
-        self.expenditure.controls[1].spans[0].text = ".00" if logged_in_user['transactions'] == [] else ".00"
+        total_income = sum([income['amount'] for income in current_month_transactions if income['transaction_type'] == 'credit'])
+        total_expenses = sum([expense['amount'] for expense in current_month_transactions if expense['transaction_type'] == 'debit'])
+        
+        self.income.controls[1].value = f"£ {format(int(total_income), ',')}" 
+        self.income.controls[1].spans[0].text = str(round(total_income - int(total_income), 2))[1:]
+        
+        self.expenditure.controls[1].value = f"£ {format(int(total_expenses), ',')}"
+        self.expenditure.controls[1].spans[0].text = str(round(total_expenses - int(total_expenses), 2))[1:]
         
         self.update_avatar()
         self.update()
 
-        #  1862835939967470 - odulaja philip
-        #  1748095829443070 - leaonard
+
     def build(self):
 
         self.settings = Container(
